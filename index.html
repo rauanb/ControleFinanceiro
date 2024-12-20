@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador de Gastos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rastreador de Gastos</h1>
+
+        <form id="income-form">
+            <!-- Entrada -->
+            <div class="section">
+                <h2>Entrada</h2>
+                <div class="input-group">
+                <label for="income-description">Descrição</label>
+                <input type="text" id="income-description" placeholder="Ex: Salário">
+            </div>
+            <div class="input-group">
+                <label for="income-amount">Valor (R$)</label>
+                <input type="number" id="income-amount" placeholder="Ex: 3000">
+            </div>
+            <div class="button-group">
+                <button onclick="addIncome()" type="submit">Adicionar</button>
+                </div>
+            </div>
+        </form>
+
+        <form id="expense-form">
+            <!-- Saída -->
+            <div class="section">
+                <h2>Saída</h2>
+                <div class="input-group">
+                    <label for="expense-description">Descrição</label>
+                    <input type="text" id="expense-description" placeholder="Ex: Aluguel">
+                </div>
+                <div class="input-group">
+                    <label for="expense-category">Categoria</label>
+                    <select id="expense-category">
+                        <option value="Moradia">Moradia</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Entretenimento">Entretenimento</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="expense-amount">Valor (R$)</label>
+                    <input type="number" id="expense-amount" placeholder="Ex: 1750">
+                </div>
+                <div class="button-group">
+                    <button onclick="addExpense()" type="submit">Adicionar</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Histórico -->
+        <div class="table-container">
+            <h2>Histórico</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                        <th>Total</th>
+                        <th>Tipo</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="history">
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Resumo -->
+        <div class="summary">
+            <h2>Resumo</h2>
+            <p>Total entrada: <span id="total-incomes">0</span></p>
+            <p>Total saída: <span id="total-expenses">0</span></p>
+            <p>Balanço: <span id="balance">0</span></p>
+        </div>
+
+        <!-- Limpar -->
+        <div class="clear-button-group">
+            <button onclick="clearAll()">Limpar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
